@@ -1,0 +1,145 @@
+---
+const technologies = [
+  {
+    name: "Rust",
+    description: "Lenguaje de programación de sistemas de alto rendimiento",
+    url: "https://www.rust-lang.org/",
+    features: ["Memoria segura", "Concurrencia sin miedo", "Velocidad nativa"],
+    logo: "🦀",
+  },
+  {
+    name: "Clap",
+    description: "Parser de argumentos de línea de comandos para Rust",
+    url: "https://docs.rs/clap/latest/clap/",
+    features: ["Parsing robusto", "Ayuda automática", "Validación de argumentos"],
+    logo: "⚡",
+  },
+  {
+    name: "Colored",
+    description: "Biblioteca para colorear texto en terminal",
+    url: "https://docs.rs/colored/latest/colored/",
+    features: ["Colores RGB", "Estilos de texto", "Compatibilidad multiplataforma"],
+    logo: "🎨",
+  },
+]
+
+const futureFeatures = [
+  "Zoom interactivo con scroll del mouse",
+  "Control de cámara desde teclado (WASD)",
+  "Más opciones de shading por intensidad",
+  "Exportar animaciones a GIF o video ASCII",
+  "Soporte para texturas básicas",
+  "Modo de renderizado en tiempo real",
+]
+---
+
+<section id="tech" class="py-20 flex justify-center">
+  <div class="container">
+    <!-- Cabecera -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Tecnología y Arquitectura</h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        showObj está construido con tecnologías modernas que garantizan rendimiento, confiabilidad y una excelente
+        experiencia de usuario.
+      </p>
+    </div>
+
+    <!-- Stack tecnológico -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      {technologies.map((tech) => (
+        <div class="border border-border rounded-xl hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-3">
+                <span class="text-2xl">{tech.logo}</span>
+                <h3 class="text-xl font-semibold">{tech.name}</h3>
+              </div>
+              <a
+                href={tech.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-secondary hover:text-secondary/80"
+              >
+                <!-- En Astro no hay lucide-react, así que uso un ícono inline -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14 3h7v7m0-7L10 14m4 7H3v-7m0 7L14 10" />
+                </svg>
+              </a>
+            </div>
+            <p class="text-sm text-muted-foreground">{tech.description}</p>
+          </div>
+          <div class="p-6 pt-0 flex flex-wrap gap-2">
+            {tech.features.map((feature) => (
+              <span class="bg-secondary/20 text-xs px-2 py-1 rounded-md">{feature}</span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Arquitectura del proyecto -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div class="border border-border rounded-xl">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold">Estructura del Proyecto</h3>
+          <p class="text-sm text-muted-foreground mb-4">Organización modular del código fuente</p>
+          <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+            <div class="text-blue-400">src/</div>
+            <div class="text-gray-300 ml-4">
+              ├── main.rs <span class="text-gray-500"># CLI principal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-border rounded-xl">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold">Características Técnicas</h3>
+          <p class="text-sm text-muted-foreground mb-4">Detalles de implementación y rendimiento</p>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm">
+              <span>Lenguaje</span>
+              <span class="bg-secondary/20 px-2 py-1 rounded-md">Rust 100%</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span>Dependencias</span>
+              <span class="border px-2 py-1 rounded-md">Mínimas</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span>Rendimiento</span>
+              <span class="bg-secondary/20 px-2 py-1 rounded-md">Nativo</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span>Memoria</span>
+              <span class="border px-2 py-1 rounded-md">Segura</span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+              <span>Plataformas</span>
+              <span class="bg-secondary/20 px-2 py-1 rounded-md">Multiplataforma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ideas futuras -->
+    <div class="border border-border rounded-xl">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold text-center">Roadmap y Ideas Futuras</h3>
+        <p class="text-sm text-muted-foreground text-center mb-4">
+          Funcionalidades planeadas para próximas versiones
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex justify-center">
+          {futureFeatures.map((feature) => (
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-red-400"></div>
+              <span class="text-sm">{feature}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

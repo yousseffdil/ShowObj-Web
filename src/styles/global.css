@@ -1,6 +1,7 @@
 @import "tailwindcss";
-
-@custom-variant dark (&:is(.dark *));
+body{
+  scroll-behavior: smooth;
+}
 
 :root {
   /* Updated color tokens to use slate and emerald palette */
