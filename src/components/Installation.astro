@@ -21,15 +21,16 @@
               <div class="flex items-center justify-between mb-2">
                 <span class="text-gray-400"># Clonar repositorio</span>
                 <button
-                  class="bg-emerald-50 p-2 border rounded hover:bg-emerald-200 hover:text-slate-800 hover:cursor-pointer transition-all"
+                  class="bg-emerald-50 px-3 py-1 text-sm border rounded hover:bg-emerald-200 hover:text-slate-800 hover:cursor-pointer transition-all"
+                  data-copy="git clone https://github.com/yousseffdil/3dViwer-rust.git
+          cd 3dViwer-rust
+          cargo build --release"
                 >
                   Copy
                 </button>
               </div>
               <div class="text-green-400 mb-3">
-                <span class="hover:text-blue-400">
-                  git clone https://github.com/yousseffdil/3dViwer-rust.git
-                </span>
+                git clone https://github.com/yousseffdil/3dViwer-rust.git
               </div>
               <div class="text-gray-400 mb-3"># Navegar al directorio</div>
               <div class="text-green-400 mb-3">cd 3dViwer-rust</div>
@@ -72,14 +73,16 @@
               <div class="text-green-400 mb-3">./showObj --help</div>
             </div>
             <div class="space-y-2">
-                <div class="flex items-center gap-2 text-sm">
-                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                    <span>Modelos incluidos: cube.obj, sphere.obj, cylinder.obj</span>
-                </div>
-                <div class="flex items-center gap-2 text-sm">
-                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span>Soporte completo para archivos .obj estándar</span>
-                </div>
+              <div class="flex items-center gap-2 text-sm">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                <span
+                  >Modelos incluidos: cube.obj, sphere.obj, cylinder.obj</span
+                >
+              </div>
+              <div class="flex items-center gap-2 text-sm">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span>Soporte completo para archivos .obj estándar</span>
+              </div>
             </div>
           </div>
         </div>
@@ -87,3 +90,17 @@
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-copy]").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-copy");
+        if (text) {
+          await navigator.clipboard.writeText(text);
+          btn.textContent = "Copied";
+          setTimeout(() => (btn.textContent = "Copy"), 1500);
+        }
+      });
+    });
+  });
+</script>
