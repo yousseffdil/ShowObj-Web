@@ -1,0 +1,78 @@
+---
+const examples = [
+  {
+    name: "Cubo",
+    file: "cube.obj",
+    description: "Modelo básico perfecto para empezar",
+    command: "./showObj -m cube.obj",
+    vertices: "8 vértices",
+    faces: "12 caras",
+  },
+  {
+    name: "Esfera",
+    file: "sphere.obj",
+    description: "Geometría esférica con múltiples subdivisiones",
+    command: "./showObj -m sphere.obj --rotate",
+    vertices: "482 vértices",
+    faces: "960 caras",
+  },
+  {
+    name: "Cilindro",
+    file: "cylinder.obj",
+    description: "Forma cilíndrica ideal para animaciones",
+    command: "./showObj -m cylinder.obj --rotate",
+    vertices: "64 vértices",
+    faces: "124 caras",
+  },
+  {
+    name: "Suzanne",
+    file: "szanne.obj",
+    description: "Modelo complejo de la mascota de Blender",
+    command: "./showObj -m szanne.obj",
+    vertices: "507 vértices",
+    faces: "1012 caras",
+  },
+];
+---
+
+<section id="exemples" class="py-20 bg-muted/30 flex justify-center">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+        Modelos de Ejemplo
+      </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        showObj incluye varios modelos 3D de ejemplo para que puedas probar
+        todas las funcionalidades inmediatamente después de la instalación.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {
+        examples.map((example, index) => {
+          return (
+            <div class="border border-border hover:shadow-lg transition-all hover:-translate-y-1 rounded p-2">
+              <div class="text-center space-y-3">
+                <h3 class="text-xl">{example.name}</h3>
+                <p class="text-sm text-muted-foreground">
+                  {example.description}
+                </p>
+                <div class="bg-gray-900 rounded p-3 text-sm">
+                    <span class="text-green-400">
+                        {example.command}
+                    </span>
+                </div>
+                <p class="text-xs">
+                  {example.vertices} · {example.faces}
+                </p>
+              </div>
+              <div class="text-sm flex">
+                <span class="font-bold">Archivo:</span>
+                <span class="text-secondary-foreground/80">{example.file}</span>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
