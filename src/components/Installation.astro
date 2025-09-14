@@ -1,0 +1,89 @@
+<section id="installation" class="py-20 flex justify-center">
+  <div class="container">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+        Instalación Rápida
+      </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Comienza a usar showObj en minutos. Solo necesitas tener Rust instalado
+        en tu sistema.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="border-boder border p-2 rounded hover:shadow">
+        <div class="flex items-center gap-2">Desde Código Fuente</div>
+        <div>
+          <span class="text-slate-500">
+            Clona el repositorio y compila desde el código fuente
+          </span>
+          <div class="rounded hover:shadow space-y-4">
+            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-gray-400"># Clonar repositorio</span>
+                <button
+                  class="bg-emerald-50 p-2 border rounded hover:bg-emerald-200 hover:text-slate-800 hover:cursor-pointer transition-all"
+                >
+                  Copy
+                </button>
+              </div>
+              <div class="text-green-400 mb-3">
+                <span class="hover:text-blue-400">
+                  git clone https://github.com/yousseffdil/3dViwer-rust.git
+                </span>
+              </div>
+              <div class="text-gray-400 mb-3"># Navegar al directorio</div>
+              <div class="text-green-400 mb-3">cd 3dViwer-rust</div>
+
+              <div class="text-gray-400 mb-3"># Compilar en modo release</div>
+              <div class="text-green-400 mb-3">cargo build --release</div>
+            </div>
+            <div class="flex items-center gap-2">
+              <div
+                class="bg-slate-900 rounded-2xl p-2 text-white text-sm flex items-center border"
+              >
+                <div class="bg-slate-800 rounded-2xl p-1">
+                  <p>Rust requerido</p>
+                </div>
+                <div>
+                  <p>~2 minutos</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-boder border p-2 rounded hover:shadow">
+        <div class="flex items-center gap-2 font-bold">Uso Básico</div>
+        <div>
+          <span class="text-slate-500 text-sm">
+            Comandos esenciales para empezar a usar showObj
+          </span>
+          <div class="rounded hover:shadow space-y-4">
+            <div class="bg-gray-900 rounded-lg p-4 font-mono text-sm">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-gray-400"># Mostrar un modelo básico</span>
+              </div>
+              <div class="text-green-400 mb-3">./showObj -m cube.obj</div>
+              <div class="text-gray-400 mb-3"># Con animación de rotación</div>
+              <div class="text-green-400 mb-3">
+                ./showObj -m cube.obj --rotate
+              </div>
+              <div class="text-gray-400 mb-3"># Ver ayuda</div>
+              <div class="text-green-400 mb-3">./showObj --help</div>
+            </div>
+            <div class="space-y-2">
+                <div class="flex items-center gap-2 text-sm">
+                    <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span>Modelos incluidos: cube.obj, sphere.obj, cylinder.obj</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                    <span>Soporte completo para archivos .obj estándar</span>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
