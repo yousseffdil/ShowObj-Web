@@ -24,12 +24,12 @@ const technologies = [
 ]
 
 const futureFeatures = [
-  "Zoom interactivo con scroll del mouse",
-  "Control de cámara desde teclado (WASD)",
-  "Más opciones de shading por intensidad",
-  "Exportar animaciones a GIF o video ASCII",
-  "Soporte para texturas básicas",
-  "Modo de renderizado en tiempo real",
+  { status: true, desc: "Zoom interactivo con scroll del mouse" },
+  { status: true, desc: "Control de cámara desde teclado (WASD)" },
+  { status: true, desc: "Más opciones de shading por intensidad" },
+  { status: false, desc: "Exportar animaciones a GIF o video ASCII" },
+  { status: false, desc: "Soporte para texturas básicas" },
+  { status: false, desc: "Modo de renderizado en tiempo real" },
 ]
 ---
 
@@ -131,11 +131,11 @@ const futureFeatures = [
         <p class="text-sm text-muted-foreground text-center mb-4">
           Funcionalidades planeadas para próximas versiones
         </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center">
           {futureFeatures.map((feature) => (
             <div class="flex items-center gap-3">
-              <div class="w-2 h-2 rounded-full bg-red-400"></div>
-              <span class="text-sm">{feature}</span>
+              <div class={`w-2 h-2 rounded-full ${feature.status ? 'bg-green-400' : 'bg-red-400'}`}></div>
+              <span class="text-sm">{feature.desc}</span>
             </div>
           ))}
         </div>
